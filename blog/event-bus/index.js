@@ -7,14 +7,21 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+const events = [];
+
 app.post("/events", (req, res) => {
     const event = req.body;
-    
+    events.push(event);
+
     axios.post("http://localhost:4000/events", event).catch(console.error);
     axios.post("http://localhost:4001/events", event).catch(console.error);
     axios.post("http://localhost:4002/events", event).catch(console.error);
     axios.post("http://localhost:4003/events", event).catch(console.error); // moderation-service
     res.send({status: "ok"});
+});
+
+app.get("/events", (req, res) => {
+    res.send(events);
 });
 
 app.listen(4005, ()=>{
