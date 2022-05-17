@@ -7,3 +7,5 @@
 * Delete pods ```minikube kubectl -- delete -f ./infra/k8s```
 * List pods ```minikube kubectl -- get pods```
 * shortcut mk for minikube kubectl
+* Delete deployment ```minkube kubectl -- delete deplyment posts-depl```
+* Get minikube ip ```minikube ip```
