@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: event-bus
-          image: xjorda/event-bus:0.0.1
+          image: xjorda/event-bus:0.0.3
 ---
 
 apiVersion: v1
